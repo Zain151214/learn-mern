@@ -1,4 +1,5 @@
 const express = require("express");
+const { connect_database } = require("./model");
 const { goalsRouter } = require("./routes");
 const dotenv = require("dotenv").config();
 
@@ -12,4 +13,5 @@ app.use("/api/goals", goalsRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on Port ${port}`);
+    connect_database()
 });
